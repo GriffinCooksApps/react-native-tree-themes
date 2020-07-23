@@ -1,5 +1,8 @@
 const { StatusBarIOS } = require("react-native");
 const { buildTheme } = require("../../manager/themeBuilder");
+const { defaultTheme } = require("../../themes/defaultTheme.js");
 
-include {buildTheme} from '../../manager/themeBuilder.js';
 
+const results = buildTheme(defaultTheme);
+
+console.println(results);
