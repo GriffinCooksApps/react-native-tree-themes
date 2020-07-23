@@ -1,5 +1,5 @@
 {
-  "name": "react-native-themes",
+  "name": "react-native-tree-themes",
   "version": "0.0.1",
   "description": "Allows you to create and manage themes in react-native",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sacridias/react-native-themes.git"
+    "url": "git+https://github.com/sacridias/react-native-tree-themes.git"
   },
   "keywords": [
     "react-native",

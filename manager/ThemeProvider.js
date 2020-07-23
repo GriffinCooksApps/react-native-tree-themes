@@ -17,16 +17,25 @@ export const ThemeProvider = (props) => {
 }
 
 _ThemeManager = (props) => {
-  if(index -1)
-  
-  return (
-    <_ThemeContext.Provider value={theme}>
-      {props.children}
-    </_ThemeContext.Provider>
-  );
+  if (index - 1)
+
+    return (
+      <_ThemeContext.Provider value={theme}>
+        {props.children}
+      </_ThemeContext.Provider>
+    );
 
 }
 
-export const setTheme = (theme) = {
-  setState({theme, index: (state.index+1)});
+/**
+ * Sets the theme for the app.
+ * @param {*} theme 
+ */
+export const setTheme = (theme) => {
+
+  const newIndex = state.index + 1;
+  setState({ 
+    theme, 
+    index: newIndex
+  });
 }

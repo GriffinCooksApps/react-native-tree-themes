@@ -1,3 +1,3 @@
-export {ThemeProvider} from './ThemeProvider';
-export {setTheme, injectTheme} from './themeSubscriber';
+export {ThemeProvider, setTheme} from './ThemeProvider';
+export {getTheme, injectTheme} from './themeSubscriber';
 export {buildTheme} from './themebuilder';
