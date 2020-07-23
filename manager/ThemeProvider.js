@@ -19,6 +19,8 @@ export const ThemeProvider = (props) => {
 
 const _ThemeManager = (props) => {
   if (state.index - 1) {
+
+    //TODO: Wow, big miss here, didn't even include that.  Ok, time to fix it the proper way.
     return (
       <_ThemeContext.Provider value={state.theme}>
         {props.children}
