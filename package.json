@@ -1,6 +1,6 @@
 {
   "name": "react-native-tree-themes",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Allows you to create and manage themes in react-native",
   "main": "index.js",
   "scripts": {
