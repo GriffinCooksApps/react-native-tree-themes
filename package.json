@@ -18,6 +18,12 @@
     "ios",
     "mobile"
   ],
+  "files": [
+    "index.js",
+    "themes/",
+    "manager/",
+    "errors.js"
+  ],
   "author": "Steven Cook<steve@egfbt.com",
   "license": "MIT",
   "bugs": {
