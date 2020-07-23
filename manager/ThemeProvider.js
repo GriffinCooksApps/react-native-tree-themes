@@ -1,6 +1,6 @@
 import React, { createContent, useState } from 'react';
 import { defaultTheme } from '../themes/defaultTheme';
-import { themeBuilder } from './themeBuilder';
+import { buildTheme } from './themeBuilder';
 
 const defaultState = { theme: defaultTheme, index: -1 };
 
