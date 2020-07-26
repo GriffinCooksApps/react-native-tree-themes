@@ -1,5 +1,7 @@
 # react-native-tree-themes
 
+*NOTICE:  This package is currently not working*
+
 Allows you to create and manage themes in react-native using a theme tree.
 
 Eventually this will be expanded to include a theme selection, 
@@ -42,7 +44,7 @@ The child can either be themed or handle the context directly.
 class Child {
   static theme = ThemeContext;
   render(){
-    <Element style={theme.background-bordered}>
+    <Element style={theme.background_bordered}>
   }
 }
 
