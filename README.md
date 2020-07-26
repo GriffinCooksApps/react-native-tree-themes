@@ -1,29 +1,66 @@
-# react-native-themes
-Add theme and theme management to ract-native
+# react-native-tree-themes
+
+Allows you to create and manage themes in react-native using a theme tree.
+
+Eventually this will be expanded to include a theme selection, 
+and hopefully some really good default themes.
+
+## Installation
+
+Typescript not yet supported, it is on the Roadmap for version 0.2
+
+```sh
+npm install react-native-tree-themes
+```
+
+## Usage
+First create a tree of themes.
 
 
-# Usage 
+```js
+import {ThemeProvider, Themed, ThemeContext } from 'react-native-tree-themes';
 
-'''
-Currently there can be only 1.
+const theme
+{
+  background:{
+    style: {backgroundColor:'#77AADD', flex:1},
+    bordered:{
+      style: {borderWidth: 2, borderColor: 'black'}
+    }
+  }
+}
 
-To use, as some point in your early stage, put in a theme provider.
-If you want to use a theme in the same place as you inject it use : buildTheme(themeStructure);
+function Ancestor = (props){
+  return 
+    <ThemeProvider theme={theme}>
+      <Child />
+    </ThemeProvider>
+}
 
-to use it in a class you need to wrap the class in themeInjector.
-I am thinking if using babbles decorator, but I think it was rejected, so maybe not.
+The child can either be themed or handle the context directly.
 
-to use inside of a function call getTheme()
+class Child {
+  static theme = ThemeContext;
+  render(){
+    <Element style={theme.background-bordered}>
+  }
+}
 
-This will take a structure as per the default example (I am in a rush will explain better later).
+or
 
-It will merge the structure into themes with names like menu-title as it goes through the structure.
-Each child element should either be style or a sub element.
-The sub element will be something like menu-title-text, it will inherit the parent attributes. and adds it's own (overriding the parent)
+const Child = Themed(class ChildComponent {
+  static theme = ThemeContext;
+  render(){
+    return <Element style={theme.background-bordered}>
+  }
+});
 
-This allows you to make sweeping changes without having to verify every possible place you put it.
+```
 
-Also, this version is not tested, if it breaks, I will replace it as soon as possible.
+## Contributing
 
-Good luck, email me if you need help, or want to help.
-'''
+See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+
+## License
+
+MIT
