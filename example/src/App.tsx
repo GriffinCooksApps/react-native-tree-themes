@@ -1,25 +1,27 @@
 import * as React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import TreeThemes from 'react-native-tree-themes';
+import { View } from 'react-native';
+import { ThemeContext, ThemeProvider } from 'react-native-tree-themes';
 
-export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+export default class App extends React.Component {
 
-  React.useEffect(() => {
-    TreeThemes.multiply(3, 7).then(setResult);
-  }, []);
-
-  return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
-  );
+  render() {
+    return (
+      <ThemeProvider>
+        <ChildClass />
+      </ThemeProvider>
+    );
+  }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+class ChildClass extends React.Component {
+
+  render() {
+    return (
+      <ThemeContext.Consumer>
+        {value =>
+          <View style={[value.background, { flex: 1 }]} />
+        }
+      </ThemeContext.Consumer>
+    );
+  }
+}

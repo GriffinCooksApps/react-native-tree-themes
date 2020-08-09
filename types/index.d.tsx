@@ -1,6 +1,6 @@
-export * from lodash;
+import lodash from 'lodash';
 import type { ImageStyle, TextStyle, ViewStyle } from 'react-native';
-
+export { lodash };
 //TODO: remove the allStyleTypes one builder is checking styles.
 export type coreThemes = {
   background: ViewStyle | allStyleTypes,
@@ -9,10 +9,6 @@ export type coreThemes = {
   TextBold: TextStyle | allStyleTypes,
 }
 
-export const isThemeTreeType = (obj: any): obj is ThemeTreeType => {
-  if (obj['style']) return true;
-  return false;
-};
 
 export type allStyleTypes = ViewStyle | TextStyle | ImageStyle;
 
@@ -22,7 +18,7 @@ export type ThemeType = {
   TextItalic?: TextStyle,
   TextBold?: TextStyle,
 
-  [key: string]: allStyleTypes
+  [key: string]: allStyleTypes | undefined
 }
 
 export type ThemeTreeType = {
