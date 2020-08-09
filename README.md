@@ -1,11 +1,6 @@
 # react-native-tree-themes
 
-*NOTICE:  This package is currently not working*
-
 Allows you to create and manage themes in react-native using a theme tree.
-
-Eventually this will be expanded to include a theme selection, 
-and hopefully some really good default themes.
 
 ## Installation
 
@@ -16,24 +11,14 @@ npm install react-native-tree-themes
 ```
 
 ## Usage
-First create a tree of themes.
 
+Import the theme provider near the start of your project.
 
 ```js
-import {ThemeProvider, Themed, ThemeContext } from 'react-native-tree-themes';
-
-const theme
-{
-  background:{
-    style: {backgroundColor:'#77AADD', flex:1},
-    bordered:{
-      style: {borderWidth: 2, borderColor: 'black'}
-    }
-  }
-}
+import {ThemeProvider, ThemeContext } from 'react-native-tree-themes';
 
 function Ancestor = (props){
-  return 
+  return
     <ThemeProvider theme={theme}>
       <Child />
     </ThemeProvider>
@@ -42,7 +27,7 @@ function Ancestor = (props){
 The child can either be themed or handle the context directly.
 
 class Child {
-  static theme = ThemeContext;
+  static theme = ThemeContext.useContext;
   render(){
     <Element style={theme.background_bordered}>
   }
@@ -50,23 +35,23 @@ class Child {
 
 or
 
-const Child = Themed(class ChildComponent {
-  static theme = ThemeContext;
+const Parent = Themed(class ChildComponent {
   render(){
-    return <Element style={theme.background-bordered}>
+    return
+      <ThemedContext.Consumer>
+        value = <Child theme={value} />
+      </ThemedContext.Consumer>
   }
 });
 
 ```
+
 ## Components
-Convention:  I replaced all standard components with components that start with t, so tView, tButton, etc.  
 
-Text: Instead of having to type out a lot, I created shorthand for various text types.
- * t - Standard Themed Text
- * ti - Italic Themed Text
- * tb - Bold Themed Text
- * tib - Themed Italic and Bold text.
-
+There are currently four030 componnents, though I plan to make more over the next few weeks.
+<TT> - Themed text
+<TI> - Themed Italics
+<TB> - Themed bold
 
 ## Contributing
 
