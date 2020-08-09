@@ -58,6 +58,15 @@ const Child = Themed(class ChildComponent {
 });
 
 ```
+## Components
+Convention:  I replaced all standard components with components that start with t, so tView, tButton, etc.  
+
+Text: Instead of having to type out a lot, I created shorthand for various text types.
+ * t - Standard Themed Text
+ * ti - Italic Themed Text
+ * tb - Bold Themed Text
+ * tib - Themed Italic and Bold text.
+
 
 ## Contributing
 
